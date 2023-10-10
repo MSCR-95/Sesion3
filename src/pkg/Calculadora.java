@@ -3,23 +3,23 @@ package pkg;
 public class Calculadora {
 
 	public static Integer Suma(int i, int j) {
-		// TODO Auto-generated method stub
-		return 5;
+		
+		return i+j;
 	}
 
 	public static Integer Resta(int i, int j) {
-		// TODO Auto-generated method stub
-		return -1;
+		
+		return i-j;
 	}
 
 	public static Integer Multiplica(int i, int j) {
-		// TODO Auto-generated method stub
-		return 6;
+		
+		return i*j;
 	}
 
 	public static Integer Divide(int i, int j) {
-		// TODO Auto-generated method stub
-		return 0;
+		
+		return i/j;
 	}
 
 }
