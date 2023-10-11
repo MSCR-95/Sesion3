@@ -12,11 +12,11 @@ import pkg.Cuenta;
 
 class CuentaTest {
 	
-	Cuenta ctaPruebas;
+	static Cuenta ctaPruebas;
 
 	@BeforeAll
 	static void setUpBeforeClass() throws Exception {
-		ctaPruebas = new Cuenta();
+		ctaPruebas = new Cuenta(0);
 	}
 
 	@AfterAll
@@ -25,23 +25,31 @@ class CuentaTest {
 
 	@BeforeEach
 	void setUp() throws Exception {
+		ctaPruebas.setSaldo(0);
 	}
 
 	@AfterEach
 	void tearDown() throws Exception {
 	}
-
+	
 	@Test
 	void testIngresar() {
 		ctaPruebas.ingresar(3000);
 		assertEquals(3000, ctaPruebas.getSaldo());
-
 	}
 	
 	@Test
 	void testRetirar() {
+		ctaPruebas.setSaldo(3000);
 		ctaPruebas.retirar(3000);
-		assertEquals(-3000, ctaPruebas.getSaldo());
+		assertEquals(0, ctaPruebas.getSaldo());
+	}
+	
+	@Test
+	void testRetirarSinSaldo() {
+		ctaPruebas.setSaldo(3000);
+		ctaPruebas.retirar(3000);
+		assertEquals(0, ctaPruebas.getSaldo());
 	}
 
 }
