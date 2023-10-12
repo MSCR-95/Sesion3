@@ -52,14 +52,16 @@ class CuentaTest {
 	@Test
 	void testRetirarSinSaldo() {
 		ctaPruebas.setSaldo(3000);
-		ctaPruebas.retirar(3500);
+		ctaPruebas.retirar(3600);
 		assertEquals(3000, ctaPruebas.getSaldo());
 	}
+	
 	
 	@Test
 	void test0014() {
 		
 		cta12345.retirar(200);
+		
 		cta67890.retirar(350);
 		cta12345.ingresar(100);
 		cta67890.retirar(200);
@@ -68,7 +70,9 @@ class CuentaTest {
 		cta67890.ingresar(50);
 		cta67890.retirar(100);
 		
+		
 		assertEquals(-250, cta12345.getSaldo());
+		
 		assertEquals(-450, cta67890.getSaldo());
 		
 	}

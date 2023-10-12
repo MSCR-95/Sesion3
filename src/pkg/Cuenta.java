@@ -22,7 +22,7 @@ public class Cuenta {
 	}
 
 	public void retirar(double i) {
-		if(this.getSaldo() - i <= this.getSaldo() && this.getSaldo() - i >= 0) //Comprobamos que el saldo que se retira es menor que el saldo existente y positivo
+		if(this.getSaldo() - i <= this.getSaldo() && this.getSaldo() - i >= -500) //Comprobamos que el saldo que se retira es menor que el saldo existente y positivo
 			this.setSaldo(this.getSaldo()-i);
 	}
 
